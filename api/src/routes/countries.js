@@ -77,10 +77,8 @@ router.get("/", async (req, res) => {
             await Country.create(newCountry);
           })
         );
-        console.log("del internet");
         res.redirect("/countries");
       } else {
-        console.log("info de mi base de datos");
         res.status(200).json(dbResponse);
       }
     }
