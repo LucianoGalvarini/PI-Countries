@@ -6,7 +6,6 @@ const { Op } = require("sequelize");
 
 router.get("/", async (req, res) => {
   try {
-    // query name devuelve todo
     if (req.query.name) {
       const response = await Country.findAll({
         where: {
@@ -26,28 +25,17 @@ router.get("/", async (req, res) => {
         ],
       });
       res.status(200).json(response);
-    }
-    // query devulve solo name,id,flagImg
-    else if (req.query.onlyName) {
+    } else if (req.query.onlyName) {
       const response = await Country.findAll({
         where: {
           name: {
             [Op.iLike]: `%${req.query.onlyName}%`,
           },
         },
-        attributes: [
-          "id",
-          "name",
-          "flagImg",
-          "continent",
-          "subRegion",
-          "area",
-          "population",
-        ],
+        attributes: ["id", "name", "flagImg", "continent", "subRegion", "area", "population"],
       });
       res.status(200).json(response);
     }
-    // main
     else {
       const dbResponse = await Country.findAll({ include: Activity });
 
