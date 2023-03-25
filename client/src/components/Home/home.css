@@ -1,0 +1,30 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filterAndOrder {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.byContinent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}

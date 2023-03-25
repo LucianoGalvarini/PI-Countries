@@ -35,8 +35,7 @@ router.get("/", async (req, res) => {
         attributes: ["id", "name", "flagImg", "continent", "subRegion", "area", "population"],
       });
       res.status(200).json(response);
-    }
-    else {
+    } else {
       const dbResponse = await Country.findAll({ include: Activity });
 
       if (!dbResponse.length) {

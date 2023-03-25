@@ -11,6 +11,7 @@ module.exports = (sequelize) => {
       validator: {
         len: [3],
       },
+  
     },
     name: {
       type: DataTypes.STRING,
