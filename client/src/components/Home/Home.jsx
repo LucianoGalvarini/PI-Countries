@@ -37,11 +37,6 @@ const Home = () => {
     dispatch(allFilters(filterState));
   }, [filterState, dispatch]);
 
-  const handleClick = (event) => {
-    dispatch(getCountries());
-    window.location.reload();
-  };
-
   const [currentPage, setCurrentPage] = useState(1);
   const countriesPerPage = 10;
   let indFirstCountry = 0;
@@ -79,7 +74,12 @@ const Home = () => {
 
   return (
     <div className="home">
-      <h1>Countries App</h1>
+      <div className="home-header">
+        <h1>Countries App</h1>
+        <a href="/createActivity" className="buttonCreateActivity">
+          Create activity
+        </a>
+      </div>
       <div className="home-body">
         <div className="filterAndOrder">
           <ContinentFilter setCurrentPage={setCurrentPage} setFilterState={setFilterState} filterState={filterState} />
