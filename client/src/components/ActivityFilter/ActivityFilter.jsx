@@ -12,7 +12,7 @@ const ActivityFilter = ({ setCurrentPage, setFilterState, filterState }) => {
 
   return (
     <div className="">
-      <h4>Filtrado por Actividades</h4>
+      <h4>Filtering by activities</h4>
       <div className="">
         <select onChange={(e) => handleFilterActivity(e)}>
           <option key={"activityFilter All"} value="All">

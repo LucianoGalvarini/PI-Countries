@@ -79,32 +79,35 @@ const Home = () => {
 
   return (
     <div className="home">
-      <div className="filterAndOrder">
-        <ContinentFilter setCurrentPage={setCurrentPage} setFilterState={setFilterState} filterState={filterState} />
-        <ActivityFilter setCurrentPage={setCurrentPage} setFilterState={setFilterState} filterState={filterState} />
-        <CountrySort setCurrentPage={setCurrentPage} setFilterState={setFilterState} filterState={filterState} />
-      </div>
+      <h1>Countries App</h1>
+      <div className="home-body">
+        <div className="filterAndOrder">
+          <ContinentFilter setCurrentPage={setCurrentPage} setFilterState={setFilterState} filterState={filterState} />
+          <ActivityFilter setCurrentPage={setCurrentPage} setFilterState={setFilterState} filterState={filterState} />
+          <CountrySort setCurrentPage={setCurrentPage} setFilterState={setFilterState} filterState={filterState} />
+        </div>
 
-      <div className="home__container">
-        {currentCountries.length === 0 && !show ? (
-          <div className="">
-            <p>Loading...</p>
-          </div>
-        ) : currentCountries.length > 0 ? (
-          <Cards currentCountries={currentCountries} />
-        ) : (
-          <div className="">
-            <p>Loading...</p>
-            <h4>"No hay coincidencias"</h4>
-          </div>
-        )}
-        <Paged
-          countriesPerPage={countriesPerPage}
-          allCountries={allCountries}
-          paged={paged}
-          key={"page" + currentPage}
-          currentPage={currentPage}
-        />
+        <div className="home__container">
+          {currentCountries.length === 0 && !show ? (
+            <div className="">
+              <p>Loading...</p>
+            </div>
+          ) : currentCountries.length > 0 ? (
+            <Cards currentCountries={currentCountries} />
+          ) : (
+            <div className="">
+              <p>Loading...</p>
+              <h4>"No hay coincidencias"</h4>
+            </div>
+          )}
+          <Paged
+            countriesPerPage={countriesPerPage}
+            allCountries={allCountries}
+            paged={paged}
+            key={"page" + currentPage}
+            currentPage={currentPage}
+          />
+        </div>
       </div>
     </div>
   );

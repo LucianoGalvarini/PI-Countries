@@ -4,10 +4,22 @@
   align-items: center;
 }
 
+.home-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2%;
+  padding: 3%;
+}
+
 .filterAndOrder {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   width: 100%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  background-color: #f5f5f5;
 }
 
 .byContinent {
@@ -17,14 +29,14 @@
 }
 
 .order {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .home__container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
 }
