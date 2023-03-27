@@ -1,0 +1,10 @@
+.searchBar {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  justify-items: center;
+  column-gap: 5%;
+}
+
+h4 {
+  grid-column-start: span 3;
+}

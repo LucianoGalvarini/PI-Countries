@@ -6,6 +6,7 @@ import Cards from "../Cards/Cards";
 import "./home.css";
 
 import Paged from "../Paged/Paged";
+import SearchBar from "../SearchBar/SearchBar";
 import CountrySort from "../Sort/Sort";
 import ContinentFilter from "../ContinentFilter/ContinentFilter";
 import ActivityFilter from "../ActivityFilter/ActivityFilter";
@@ -82,6 +83,7 @@ const Home = () => {
       </div>
       <div className="home-body">
         <div className="filterAndOrder">
+          <SearchBar />
           <ContinentFilter setCurrentPage={setCurrentPage} setFilterState={setFilterState} filterState={filterState} />
           <ActivityFilter setCurrentPage={setCurrentPage} setFilterState={setFilterState} filterState={filterState} />
           <CountrySort setCurrentPage={setCurrentPage} setFilterState={setFilterState} filterState={filterState} />
