@@ -26,6 +26,9 @@ const CountryDetail = () => {
         <img className="country-flag" src={countryDetail.flagImg} alt={`${countryDetail.name} flag`} />
         <div className="country-info">
           <div className="divInfoCountries">
+            <label>ID:</label> <span>{countryDetail.id}</span>
+          </div>
+          <div className="divInfoCountries">
             <label>Continent:</label> <span>{countryDetail.continent}</span>
           </div>
           <div className="divInfoCountries">

@@ -112,6 +112,7 @@ export default function CreateActivityForm() {
           } else {
             msg = `The activity was not created`;
           }
+
           setResponse({ msg, show: true });
           setActivityData({
             name: "",
@@ -311,7 +312,11 @@ export default function CreateActivityForm() {
                 <div key={index}>
                   <img src={country.img} alt={`${country.name} flag`} />
                   <h4 id={country.id}>{country.name}</h4>
-                  <button className="country-detail-button removeButton" id={`remove-${country.id}`} onClick={handleRemoveCountry}>
+                  <button
+                    className="country-detail-button removeButton"
+                    id={`remove-${country.id}`}
+                    onClick={handleRemoveCountry}
+                  >
                     Remove
                   </button>
                 </div>
@@ -320,7 +325,7 @@ export default function CreateActivityForm() {
           </div>
 
           <button type="submit" className="country-detail-button createButton">
-            Create!
+            Create
           </button>
         </form>
       </div>
