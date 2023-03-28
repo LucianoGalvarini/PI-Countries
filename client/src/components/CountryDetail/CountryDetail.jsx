@@ -14,7 +14,7 @@ const CountryDetail = () => {
 
   useEffect(() => {
     dispatch(getCountryDetail(id));
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   return (
     <div className="country-detail-container">
