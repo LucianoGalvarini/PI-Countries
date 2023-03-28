@@ -91,15 +91,14 @@ const Home = () => {
 
         <div className="home__container">
           {currentCountries.length === 0 && !show ? (
-            <div className="">
+            <div className="loadingCountries">
               <p>Loading...</p>
             </div>
           ) : currentCountries.length > 0 ? (
             <Cards currentCountries={currentCountries} />
           ) : (
-            <div className="">
-              <p>Loading...</p>
-              <h4>"No hay coincidencias"</h4>
+            <div className="loadingCountries">
+              <p>No hay coincidencias</p>
             </div>
           )}
           <Paged

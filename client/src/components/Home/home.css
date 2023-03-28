@@ -11,6 +11,15 @@
   width: 100%;
 }
 
+.loadingCountries {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  height: 100%;
+}
+
 .buttonCreateActivity {
   right: 4%;
   top: 4%;
