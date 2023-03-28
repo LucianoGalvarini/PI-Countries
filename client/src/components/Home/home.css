@@ -11,6 +11,11 @@
   width: 100%;
 }
 
+.home-header h1 {
+  font-size: 40px;
+  letter-spacing: 3px;
+}
+
 .loadingCountries {
   display: flex;
   flex-direction: column;

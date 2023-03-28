@@ -25,7 +25,6 @@ const Home = () => {
     dispatch(getCountries());
   }, [dispatch]);
 
-  //Estado local para los filtros
   const [filterState, setFilterState] = useState({
     continent: [],
     sort: "Orden",

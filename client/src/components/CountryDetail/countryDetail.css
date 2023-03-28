@@ -5,6 +5,12 @@
   align-items: center;
   height: 100vh;
 }
+.country-detail-container a {
+  margin: 10px;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
 
 .country-detail-button {
   padding: 10px 50px;

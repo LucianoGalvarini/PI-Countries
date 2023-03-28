@@ -19,7 +19,7 @@ const CountryDetail = () => {
   return (
     <div className="country-detail-container">
       <a href="/home" className="country-detail-button">
-        Volver
+        Back
       </a>
       <div className="country-background">
         <h1 className="country-name">{countryDetail.name}</h1>

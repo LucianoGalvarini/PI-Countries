@@ -182,7 +182,7 @@ export default function CreateActivityForm() {
     <>
       <div className="divActivity">
         <a href="/home" className="country-detail-button">
-          Volver
+          Back
         </a>
         <h2>{response.msg}</h2>
         <form onSubmit={handleSubmit} className="formActivity">
@@ -311,7 +311,7 @@ export default function CreateActivityForm() {
                 <div key={index}>
                   <img src={country.img} alt={`${country.name} flag`} />
                   <h4 id={country.id}>{country.name}</h4>
-                  <button id={`remove-${country.id}`} onClick={handleRemoveCountry}>
+                  <button className="country-detail-button removeButton" id={`remove-${country.id}`} onClick={handleRemoveCountry}>
                     Remove
                   </button>
                 </div>
