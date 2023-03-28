@@ -1,5 +1,12 @@
 import { sortedCountries, filterByActivity, filterByContinent } from "../../utils/Utils.jsx";
-import { GETALLCOUNTRIES, POSTACTIVITY, GETCOUNTRYDETAIL, GETACTIVITIES, ALLFILTERS } from "../actions/constants";
+import {
+  GETALLCOUNTRIES,
+  POSTACTIVITY,
+  GETCOUNTRYDETAIL,
+  GETACTIVITIES,
+  ALLFILTERS,
+  GET_COUNTRY_NAME,
+} from "../actions/constants";
 
 const initialState = {
   countries: [],
@@ -35,6 +42,12 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         countries: countries,
         //filterNameCountry: action.payload.condition,
+      };
+
+    case GET_COUNTRY_NAME:
+      return {
+        ...state,
+        countries: action.payload,
       };
 
     case POSTACTIVITY:

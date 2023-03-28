@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { GETALLCOUNTRIES, GETCOUNTRYDETAIL, GETACTIVITIES, ALLFILTERS } from "./constants";
+import { GETALLCOUNTRIES, GETCOUNTRYDETAIL, GETACTIVITIES, ALLFILTERS, GET_COUNTRY_NAME } from "./constants";
 
 export const getCountries = () => {
   return async (dispatch) => {
@@ -55,3 +55,17 @@ export const allFilters = (payload) => {
     };
   }
 };
+
+export function getCountriesByName(name) {
+  return async function (dispatch) {
+    try {
+      let json = await axios.get(`http://localhost:3001/countries?onlyName=${name}`);
+      return dispatch({
+        type: GET_COUNTRY_NAME,
+        payload: json.data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}

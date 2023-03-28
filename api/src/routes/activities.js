@@ -5,39 +5,36 @@ const { Country, Activity } = require("../db");
 router.post("/", async (req, res) => {
   try {
     const { name, difficulty, duration, season, countries } = req.body;
+    let created = false;
 
-    if (!countries || !countries.length) {
-      return res
-        .status(400)
-        .json({ msg: "Por favor incluya al menos un país." });
+    if (!name || !difficulty || !duration || !season || !countries) {
+      return res.status(404).json({ msg: "incomplete form" });
     }
-
-    if (!name || !difficulty || !duration || !season) {
-      return res
-        .status(400)
-        .json({ msg: "Por favor complete todos los campos requeridos." });
-    }
-
-    const newActivity = await Activity.create({
-      name,
-      difficulty,
-      duration,
-      season,
-    });
 
     for (let country of countries) {
-      const selectedCountry = await Country.findOne({
-        where: { id: country },
+      const activityExists = await Activity.findOne({
+        where: { name: name },
+        include: [
+          {
+            model: Country,
+            where: {
+              id: country.id,
+            },
+          },
+        ],
       });
-      await newActivity.addCountry(selectedCountry);
+
+      if (!activityExists) {
+        const newActivity = await Activity.create({ name, difficulty, duration, season });
+        created = true;
+
+        await newActivity.setCountries(countries.map((c) => c.id));
+      }
     }
 
-    return res.status(200).json(newActivity);
+    return res.status(200).json({ created });
   } catch (error) {
-    console.log(error);
-    return res.status(500).json({
-      msg: "Ha ocurrido un error al crear la actividad turística.",
-    });
+    return res.status(404).json({ msg: error.msg });
   }
 });
 

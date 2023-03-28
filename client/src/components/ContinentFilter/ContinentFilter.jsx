@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const ContinentFilter = ({ setCurrentPage, setFilterState, filterState }) => {
   const continentsList = ["Africa", "South America", "North America", "Asia", "Europe", "Oceania", "Antarctica"];
-  const [filterContinent, setFilterContinent] = useState([false, false, false, false, false, false]);
+  const [filterContinent, setFilterContinent] = useState([false, false, false, false, false, false, false]);
 
   const handleFilterContinent = (event) => {
     let updateCheckedState = [
