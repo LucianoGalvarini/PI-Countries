@@ -25,21 +25,21 @@ const CountryDetail = () => {
         <h1 className="country-name">{countryDetail.name}</h1>
         <img className="country-flag" src={countryDetail.flagImg} alt={`${countryDetail.name} flag`} />
         <div className="country-info">
-          <p>
-            <strong>Continent:</strong> {countryDetail.continent}
-          </p>
-          <p>
-            <strong>Capital:</strong> {countryDetail.capital}
-          </p>
-          <p>
-            <strong>Subregion:</strong> {countryDetail.subRegion}
-          </p>
-          <p>
-            <strong>Area:</strong> {countryDetail.area} km²
-          </p>
-          <p>
-            <strong>Population:</strong> {countryDetail.population}
-          </p>
+          <div className="divInfoCountries">
+            <label>Continent:</label> <span>{countryDetail.continent}</span>
+          </div>
+          <div className="divInfoCountries">
+            <label>Capital:</label> <span>{countryDetail.capital}</span>
+          </div>
+          <div className="divInfoCountries">
+            <label>Subregion:</label> <span>{countryDetail.subRegion}</span>
+          </div>
+          <div className="divInfoCountries">
+            <label>Area:</label> <span>{countryDetail.area} km²</span>
+          </div>
+          <div className="divInfoCountries">
+            <label>Population:</label> <span>{countryDetail.population}</span>
+          </div>
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./continentFilter.css";
 
 const ContinentFilter = ({ setCurrentPage, setFilterState, filterState }) => {
   const continentsList = ["Africa", "South America", "North America", "Asia", "Europe", "Oceania", "Antarctica"];
@@ -16,24 +17,23 @@ const ContinentFilter = ({ setCurrentPage, setFilterState, filterState }) => {
   };
 
   return (
-    <div className="byContinent">
-      <h4>Filtering by continent</h4>
-      <div>
+    <div className="filterByContinent">
+      <h3>Filtering by continent</h3>
+      <div className="divContinents">
         {continentsList.map((element, index) => {
           return (
-            <div key={"div" + index}>
-              <label key={"label" + index}>
-                <input
-                  key={"input" + index}
-                  type="checkbox"
-                  id={index}
-                  name={element}
-                  value={element}
-                  checked={filterContinent[index]}
-                  onChange={(e) => handleFilterContinent(e)}
-                />
-                {element}
-              </label>
+            <div key={"div" + index} className="inputLabelContinent">
+              <input
+                key={"input" + index}
+                type="checkbox"
+                className="inputContinent"
+                id={index}
+                name={element}
+                value={element}
+                checked={filterContinent[index]}
+                onChange={(e) => handleFilterContinent(e)}
+              />
+              <label key={"label" + index}>{element}</label>
             </div>
           );
         })}

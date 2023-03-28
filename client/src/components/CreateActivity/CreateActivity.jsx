@@ -319,7 +319,7 @@ export default function CreateActivityForm() {
             </div>
           </div>
 
-          <button type="submit" className="createButton">
+          <button type="submit" className="country-detail-button createButton">
             Create!
           </button>
         </form>

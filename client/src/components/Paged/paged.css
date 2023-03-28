@@ -1,0 +1,17 @@
+.buttonPaged {
+  background-color: #fff;
+  border: 1px solid #333;
+  color: #333;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 6px 10px;
+  transition: all 0.3s ease-in-out;
+  margin: 0 3px;
+}
+
+.buttonPaged:hover {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #333;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}

@@ -16,12 +16,13 @@
   border: 2px solid #414141;
   border-radius: 5px;
   background-color: #f5f5f5;
-  transition: background-color 1s ease, color 1s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .country-detail-button:hover {
   background-color: #414141;
-  color: #f9f9f2;
+  color: #f5f5f5;
+  cursor: pointer;
 }
 
 .country-background {
@@ -32,7 +33,7 @@
   min-width: 450px;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.7);
   border-radius: 15px;
-  background-color: #f9f9f2;
+  background-color: #fafafa;
 }
 
 .country-name {
@@ -50,15 +51,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.country-info p {
-  margin: 0.5rem;
-  font-size: 1.2rem;
-  text-align: right;
+  width: 60%;
+  margin-bottom: 1rem;
 }
 
-.country-info strong {
-  font-weight: bold;
-  margin-right: 0.5rem;
-  text-align: left;
+.divInfoCountries {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 20px;
+  padding: 10px 0;
+}
+
+.divInfoCountries label {
+  font-weight: 600;
+  text-decoration: underline;
 }

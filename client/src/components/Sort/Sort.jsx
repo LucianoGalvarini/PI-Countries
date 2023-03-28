@@ -1,4 +1,5 @@
 import React from "react";
+import "./sort.css";
 
 const CountrySort = ({ setCurrentPage, setFilterState, filterState }) => {
   const sortedList = ["ascendName", "descendName", "ascendPob", "descendPob"];
@@ -11,7 +12,7 @@ const CountrySort = ({ setCurrentPage, setFilterState, filterState }) => {
 
   return (
     <div className="order">
-      <h4>Order</h4>
+      <h3>Order</h3>
       <div key={"sortContinet"}>
         <select onChange={(event) => handleOrder(event)}>
           <option key={"sortContinent Orden"} value="Orden">

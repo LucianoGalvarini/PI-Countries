@@ -15,7 +15,7 @@ const SearchBar = () => {
 
   return (
     <div className="searchBar">
-      <h4>Search country</h4>
+      <h3>Search country</h3>
       <input placeholder="Search country" value={searchTerm} onChange={handleInputChange} />
     </div>
   );

@@ -1,3 +1,5 @@
+import "./paged.css";
+
 const Paged = ({ countriesPerPage, allCountries, paged, currentPage }) => {
   let pageNumbers = [];
 
@@ -20,7 +22,7 @@ const Paged = ({ countriesPerPage, allCountries, paged, currentPage }) => {
                 paged(num);
               }}
               value={num}
-              // className={currentPage === num ? styles.btnPage : ""}
+              className="buttonPaged"
             >
               {num}
             </button>
