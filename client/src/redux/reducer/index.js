@@ -63,7 +63,7 @@ const rootReducer = (state = initialState, action) => {
 
     case GETACTIVITIES:
       let activitys;
-      if (action.payload[0].name !== "No hay actividades guardadas") {
+      if (action.payload[0] !== "No hay actividades guardadas") {
         activitys = action.payload.map((elem) => {
           return { name: elem.name, id: elem.id };
         });

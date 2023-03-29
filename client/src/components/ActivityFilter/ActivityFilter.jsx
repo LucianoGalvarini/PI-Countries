@@ -5,10 +5,10 @@ import "./activityFilter.css";
 const ActivityFilter = ({ setCurrentPage, setFilterState, filterState }) => {
   const allActivities = useSelector((state) => state.activitiesNamesId);
 
-  const handleFilterActivity = (event) => {
-    setFilterState({ ...filterState, activity: event.target.value });
+  const handleFilterActivity = (e) => {
+    e.preventDefault();
+    setFilterState({ ...filterState, activity: e.target.value });
     setCurrentPage(1);
-    event.preventDefault();
   };
 
   return (

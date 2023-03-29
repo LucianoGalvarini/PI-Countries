@@ -231,9 +231,9 @@ export default function CreateActivityForm() {
             />
           </div>
           <div className="formDivs">
-            <label htmlFor="season">Season:</label>
+            <label>Season:</label>
             <div className="divSeasons">
-              <label htmlFor="Summer">
+              <label htmlFor="Summer" className="labelSeason">
                 Summer
                 <input
                   type="radio"
@@ -244,7 +244,7 @@ export default function CreateActivityForm() {
                   checked={activityData.season === "Summer"}
                 />
               </label>
-              <label htmlFor="Autumn">
+              <label htmlFor="Autumn" className="labelSeason">
                 Autumn
                 <input
                   type="radio"
@@ -255,7 +255,7 @@ export default function CreateActivityForm() {
                   checked={activityData.season === "Autumn"}
                 />
               </label>
-              <label htmlFor="Winter">
+              <label htmlFor="Winter" className="labelSeason">
                 Winter
                 <input
                   type="radio"
@@ -266,7 +266,7 @@ export default function CreateActivityForm() {
                   checked={activityData.season === "Winter"}
                 />
               </label>
-              <label htmlFor="Spring">
+              <label htmlFor="Spring" className="labelSeason">
                 Spring
                 <input
                   type="radio"

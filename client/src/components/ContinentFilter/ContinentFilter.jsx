@@ -5,13 +5,11 @@ const ContinentFilter = ({ setCurrentPage, setFilterState, filterState }) => {
   const continentsList = ["Africa", "South America", "North America", "Asia", "Europe", "Oceania", "Antarctica"];
   const [filterContinent, setFilterContinent] = useState([false, false, false, false, false, false, false]);
 
-  const handleFilterContinent = (event) => {
-    let updateCheckedState = [
-      ...filterContinent.map((element, index) => (index === parseInt(event.target.id) ? !element : element)),
-    ];
+  const handleFilterContinent = (e) => {
+    let updateCheckedState = [...filterContinent.map((el, i) => (i === parseInt(e.target.id) ? !el : el))];
     setFilterContinent(updateCheckedState);
 
-    let statusFilter = continentsList.filter((element, index) => updateCheckedState[index] === true);
+    let statusFilter = continentsList.filter((el, i) => updateCheckedState[i] === true);
     setFilterState({ ...filterState, continent: statusFilter });
     setCurrentPage(1);
   };
@@ -20,20 +18,20 @@ const ContinentFilter = ({ setCurrentPage, setFilterState, filterState }) => {
     <div className="filterByContinent">
       <h3>Filtering by continent</h3>
       <div className="divContinents">
-        {continentsList.map((element, index) => {
+        {continentsList.map((el, i) => {
           return (
-            <div key={"div" + index} className="inputLabelContinent">
+            <div key={"div" + i} className="inputLabelContinent">
               <input
-                key={"input" + index}
+                key={"input" + i}
                 type="checkbox"
                 className="inputContinent"
-                id={index}
-                name={element}
-                value={element}
-                checked={filterContinent[index]}
+                id={i}
+                name={el}
+                value={el}
+                checked={filterContinent[i]}
                 onChange={(e) => handleFilterContinent(e)}
               />
-              <label key={"label" + index}>{element}</label>
+              <label key={"label" + i}>{el}</label>
             </div>
           );
         })}

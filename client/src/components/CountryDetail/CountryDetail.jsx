@@ -10,7 +10,10 @@ const CountryDetail = () => {
   const { id } = useParams();
   const countryDetail = useSelector((state) => state.countryDetail);
 
-  // id, name, flagImg, continent, capital, subRegion, area, population
+  const areaNumber = Number(countryDetail.area?.replace(/[^\d]/g, ""));
+  countryDetail.area = areaNumber.toLocaleString();
+
+  countryDetail.population = countryDetail.population?.toLocaleString();
 
   useEffect(() => {
     dispatch(getCountryDetail(id));

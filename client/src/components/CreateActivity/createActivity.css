@@ -6,13 +6,15 @@
 }
 
 .divActivity label {
-  font-size: 20px;
+  font-size: 22px;
+  text-decoration: underline;
+  font-weight: 700;
 }
 
 .divActivity input,
 .divActivity select {
   width: 100%;
-  padding: 10px 20px;
+  padding: 10px 22px;
   margin: 8px 0;
   box-sizing: border-box;
   text-align: center;
@@ -54,6 +56,18 @@
 .divSeasons {
   display: flex;
   gap: 20px;
+}
+
+.divSeasons label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 15px 0;
+}
+
+.divSeasons input {
+  margin-left: 5px;
 }
 
 .divAddCountry {
