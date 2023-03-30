@@ -13,6 +13,7 @@ import ActivityFilter from "../ActivityFilter/ActivityFilter";
 
 const Home = () => {
   const dispatch = useDispatch();
+
   const allCountries = useSelector((state) => state.countries);
 
   const [show, setShow] = useState(false);
@@ -78,7 +79,7 @@ const Home = () => {
       </div>
       <div className="home-body">
         <div className="filterAndOrder">
-          <SearchBar />
+          <SearchBar setCurrentPage={setCurrentPage} />
           <ContinentFilter setCurrentPage={setCurrentPage} setFilterState={setFilterState} filterState={filterState} />
           <ActivityFilter setCurrentPage={setCurrentPage} setFilterState={setFilterState} filterState={filterState} />
           <CountrySort setCurrentPage={setCurrentPage} setFilterState={setFilterState} filterState={filterState} />

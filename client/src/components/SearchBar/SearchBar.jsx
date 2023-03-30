@@ -3,13 +3,14 @@ import { useDispatch } from "react-redux";
 import { getCountriesByName } from "../../redux/actions/index";
 import "./searchBar.css";
 
-const SearchBar = () => {
+const SearchBar = ({ setCurrentPage }) => {
   const [data, setData] = useState("");
   const dispatch = useDispatch();
 
   const handleInputChange = (e) => {
     setData(e.target.value);
     dispatch(getCountriesByName(e.target.value));
+    setCurrentPage(1);
   };
 
   return (
