@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { getCountries } from "../../redux/actions/index";
-import { useDispatch } from "react-redux";
+import { getCountries, getActivitiesList } from "../../redux/actions/index";
+import { useDispatch, useSelector } from "react-redux";
 import "./createActivity.css";
 
 export default function CreateActivityForm() {
   const dispatch = useDispatch();
   const [response, setResponse] = useState({ msg: "", show: false });
+  const allActivitiesData = useSelector((state) => state.activitiesNamesId);
+  const allActivities = allActivitiesData.map((activity) => {
+    const { id, ...rest } = activity;
+    return rest;
+  });
 
   const [activityData, setActivityData] = useState({
     name: "",
@@ -15,6 +20,13 @@ export default function CreateActivityForm() {
     season: "Summer",
     countries: [],
   });
+
+  const activityDataSimple = {
+    ...activityData,
+    difficulty: parseInt(activityData.difficulty),
+    duration: parseInt(activityData.duration),
+    countries: activityData.countries.map((country) => ({ id: country.id })),
+  };
 
   const [errors, setErrors] = useState({
     nameError: false,
@@ -32,6 +44,7 @@ export default function CreateActivityForm() {
 
   useEffect(() => {
     dispatch(getCountries());
+    dispatch(getActivitiesList());
   }, [dispatch]);
 
   useEffect(() => {
@@ -98,7 +111,16 @@ export default function CreateActivityForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (response.show === true) return;
+
     if (!errors.nameError && !errors.durationError && !errors.countryError) {
+      const exists =
+        allActivities.findIndex((act) => JSON.stringify(act) === JSON.stringify(activityDataSimple)) !== -1;
+
+      if (exists) {
+        setResponse({ msg: "This activity already exists", show: true });
+        return;
+      }
+
       axios
         .post("http://localhost:3001/activity", {
           ...activityData,

@@ -61,17 +61,13 @@ const rootReducer = (state = initialState, action) => {
       };
 
     case GETACTIVITIES:
-      let activitys;
       if (action.payload[0] !== "No hay actividades guardadas") {
-        activitys = action.payload.map((elem) => {
-          return { name: elem.name, id: elem.id };
-        });
+        return {
+          ...state,
+          activitiesNamesId: action.payload,
+        };
       }
-      return {
-        ...state,
-        activitiesNamesId: activitys,
-      };
-
+    // eslint-disable-next-line
     default:
       return state;
   }
