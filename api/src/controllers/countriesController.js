@@ -30,7 +30,8 @@ async function getCountries(req, res) {
             [Op.iLike]: `%${req.query.onlyName}%`,
           },
         },
-        attributes: ["id", "name", "flagImg", "continent", "subRegion", "area", "population"],
+        attributes: ["id", "name", "flagImg", "continent"],
+        // attributes: ["id", "name", "flagImg", "continent", "subRegion", "area", "population"],
       });
       res.status(200).json(response);
     } else {

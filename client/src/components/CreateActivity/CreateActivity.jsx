@@ -126,6 +126,7 @@ export default function CreateActivityForm() {
           ...activityData,
           difficulty: activityData.difficulty.toString(),
         })
+
         .then(({ data }) => {
           if (!data) {
             return;

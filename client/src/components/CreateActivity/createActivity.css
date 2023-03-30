@@ -86,10 +86,16 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
   font-size: 15px;
   max-height: 200px;
   overflow-y: auto;
   margin-top: 10px;
+}
+
+.countrySuggestion div {
+  display: flex;
+  align-items: center;
 }
 
 .countrySuggestion img {

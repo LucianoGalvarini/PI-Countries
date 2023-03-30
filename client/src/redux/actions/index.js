@@ -54,6 +54,7 @@ export function getCountriesByName(name) {
   return async function (dispatch) {
     try {
       let response = await axios.get(API_URL + `countries?onlyName=${name}`);
+
       return dispatch({
         type: GET_COUNTRY_NAME,
         payload: response.data,
