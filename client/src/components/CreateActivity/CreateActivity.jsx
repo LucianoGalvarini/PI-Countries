@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import "./createActivity.css";
 
 export default function CreateActivityForm() {
+  const dispatch = useDispatch();
   const [response, setResponse] = useState({ msg: "", show: false });
 
   const [activityData, setActivityData] = useState({
@@ -28,8 +29,6 @@ export default function CreateActivityForm() {
     img: "",
   });
   const [enableSuggestion, setEnableSuggestion] = useState(false);
-
-  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getCountries());
@@ -106,12 +105,10 @@ export default function CreateActivityForm() {
           difficulty: activityData.difficulty.toString(),
         })
         .then(({ data }) => {
-          let msg;
-          if (data) {
-            msg = `The activity was successfully created`;
-          } else {
-            msg = `The activity was not created`;
+          if (!data) {
+            return;
           }
+          let msg = `The activity was successfully created`;
 
           setResponse({ msg, show: true });
           setActivityData({

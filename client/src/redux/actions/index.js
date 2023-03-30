@@ -13,13 +13,6 @@ export const getCountries = () => {
   };
 };
 
-export const postActivity = (payload) => {
-  return async () => {
-    const response = await axios.post(API_URL + "activity", payload);
-    return response.data;
-  };
-};
-
 export const getCountryDetail = (id) => {
   return async (dispatch) => {
     const response = await axios.get(API_URL + `countries/${id}`);
