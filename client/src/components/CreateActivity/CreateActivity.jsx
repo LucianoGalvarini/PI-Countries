@@ -333,9 +333,15 @@ export default function CreateActivityForm() {
             </div>
           </div>
 
-          <button type="submit" className="country-detail-button createButton">
-            Create
-          </button>
+          {!errors.nameError && !errors.durationError && !errors.countryError ? (
+            <button type="submit" className="country-detail-button createButton">
+              Create
+            </button>
+          ) : (
+            <button type="submit" className="country-detail-button createButton disabled" disabled>
+              Create
+            </button>
+          )}
         </form>
       </div>
     </>
