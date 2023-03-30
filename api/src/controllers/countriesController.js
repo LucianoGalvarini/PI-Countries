@@ -72,7 +72,7 @@ async function getCountries(req, res) {
   }
 }
 
-async function getActivitiesByCountryId(req, res) {
+async function getCountryId(req, res) {
   try {
     const response = await Country.findAll({
       where: {
@@ -97,5 +97,5 @@ async function getActivitiesByCountryId(req, res) {
 
 module.exports = {
   getCountries,
-  getActivitiesByCountryId,
+  getCountryId,
 };

@@ -125,7 +125,19 @@ export default function CreateActivityForm() {
         })
         .catch((error) => console.log(error));
     } else {
-      setResponse({ msg: "Form incomplete", show: true });
+      let msg;
+
+      if (errors.nameError) {
+        msg = "Please provide a name for the activity.";
+      } else if (errors.durationError) {
+        msg = "Please select a duration between 1 and 72 hours for the activity.";
+      } else if (errors.countryError) {
+        msg = "Please select at least one country for the activity.";
+      } else {
+        msg = "Form incomplete";
+      }
+
+      setResponse({ msg, show: true });
     }
   };
 
