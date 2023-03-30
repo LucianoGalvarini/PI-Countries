@@ -67,10 +67,7 @@ const filterByActivity = (activity, countries) => {
 const filterByContinent = (continents, countries) => {
   let stateFiltered = [];
   for (let element of continents) {
-    stateFiltered = [
-      ...stateFiltered,
-      ...countries.filter((value) => value.continent === element),
-    ];
+    stateFiltered = [...stateFiltered, ...countries.filter((value) => value.continent === element)];
   }
   return stateFiltered;
 };

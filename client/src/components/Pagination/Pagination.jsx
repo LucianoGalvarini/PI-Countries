@@ -1,20 +1,20 @@
-import "./paged.css";
+import "./pagination.css";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 const Paged = ({ countriesPerPage, allCountries, paged, currentPage }) => {
   let pageNumbers = [];
 
-  const maxPages = 5; // Máximo de 5 páginas
+  const maxPages = 5;
   const totalPages = Math.ceil((allCountries.length - 10) / (countriesPerPage + 1)) + 1;
-  let startPage = Math.max(1, currentPage - Math.floor(maxPages / 2)); // Página inicial del rango visible
-  let endPage = Math.min(totalPages, startPage + maxPages - 1); // Página final del rango visible
+  let startPage = Math.max(1, currentPage - Math.floor(maxPages / 2));
+  let endPage = Math.min(totalPages, startPage + maxPages - 1);
 
   for (let i = startPage; i <= endPage; i++) {
     pageNumbers.push(i);
   }
 
-  const showPrev = currentPage > 1; // Mostrar flecha "anterior" si no se encuentra en la primera página
-  const showNext = currentPage < totalPages; // Mostrar flecha "siguiente" si no se encuentra en la última página
+  const showPrev = currentPage > 1;
+  const showNext = currentPage < totalPages;
 
   return (
     <div className="paged">

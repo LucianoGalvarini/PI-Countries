@@ -5,9 +5,9 @@ import { getCountries, getActivitiesList, allFilters } from "../../redux/actions
 import Cards from "../Cards/Cards";
 import "./home.css";
 
-import Paged from "../Paged/Paged";
+import Pagination from "../Pagination/Pagination";
 import SearchBar from "../SearchBar/SearchBar";
-import CountrySort from "../Sort/Sort";
+import CountrySort from "../CountrySort/CountrySort";
 import ContinentFilter from "../ContinentFilter/ContinentFilter";
 import ActivityFilter from "../ActivityFilter/ActivityFilter";
 
@@ -19,10 +19,6 @@ const Home = () => {
   useEffect(() => {
     dispatch(getCountries());
     dispatch(getActivitiesList());
-  }, [dispatch]);
-
-  useEffect(() => {
-    dispatch(getCountries());
   }, [dispatch]);
 
   const [filterState, setFilterState] = useState({
@@ -100,7 +96,7 @@ const Home = () => {
               <p>No hay coincidencias</p>
             </div>
           )}
-          <Paged
+          <Pagination
             countriesPerPage={countriesPerPage}
             allCountries={allCountries}
             paged={paged}

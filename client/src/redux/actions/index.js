@@ -5,16 +5,16 @@ const API_URL = "http://localhost:3001/";
 
 export const getCountries = () => {
   return async (dispatch) => {
-    let allCountries = await axios.get(API_URL + "countries");
+    let response = await axios.get(API_URL + "countries");
     return dispatch({
       type: GETALLCOUNTRIES,
-      payload: allCountries.data,
+      payload: response.data,
     });
   };
 };
 
 export const postActivity = (payload) => {
-  return async (dispatch) => {
+  return async () => {
     const response = await axios.post(API_URL + "activity", payload);
     return response.data;
   };
@@ -60,10 +60,10 @@ export const allFilters = (payload) => {
 export function getCountriesByName(name) {
   return async function (dispatch) {
     try {
-      let json = await axios.get(API_URL + `countries?onlyName=${name}`);
+      let response = await axios.get(API_URL + `countries?onlyName=${name}`);
       return dispatch({
         type: GET_COUNTRY_NAME,
-        payload: json.data,
+        payload: response.data,
       });
     } catch (error) {
       console.log(error);

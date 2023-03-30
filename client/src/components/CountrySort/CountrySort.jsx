@@ -1,5 +1,5 @@
 import React from "react";
-import "./sort.css";
+import "./countrySort.css";
 
 const CountrySort = ({ setCurrentPage, setFilterState, filterState }) => {
   const sortedList = ["ascendName", "descendName", "ascendPob", "descendPob"];
